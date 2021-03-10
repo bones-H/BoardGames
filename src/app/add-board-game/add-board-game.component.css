@@ -1,0 +1,20 @@
+/*.ng-valid {*/
+/*  box-shadow: 0 0 10px chartreuse;*/
+/*}*/
+form {
+  text-align: center;
+}
+input {
+  margin: 5px;
+}
+.invalid {
+  box-shadow: 0 0 4px darkred;
+  color: darkred;
+}
+.input-block {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 10px;
+}

@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="header">
+    <app-add-form (newGame)="pushNewBoardGame($event)"></app-add-form>
+    <app-filter (pushFilterForm)="pushFilterForm($event)"></app-filter>
+  </div>
+<!--  <button (click)="toJson()">to Json</button>-->
+
+
+  <div class="game-box">
+    <div class="game-box_list">
+
+      <app-board-game-list
+        [boardGamesList]="filteredList$ | async"
+        [loading]="loading$ | async"
+        [selectedBoardGame]="selectedBoardGame$ | async"
+        (onSelected)='pushSelectedBoardGame($event)'
+        (onRemoved)='removeBoardGame($event)'
+      ></app-board-game-list>
+    </div>
+    <div class="game-box_display">
+
+      <app-board-game-display
+        [selectedBoardGame]="selectedBoardGame$ | async"
+        (onRating)="pushRating($event)"
+      ></app-board-game-display>
+    </div>
+  </div>
+
+
+</div>

@@ -1,0 +1,24 @@
+
+<form [formGroup]="filterForm">
+  <p>Показать игры:
+    <label><input type="radio"
+                  [value]=null
+                  formControlName="bought"
+    >Все</label>
+    <label><input type="radio"
+                  [value]=true
+                  formControlName="bought"
+    >Купленные</label>
+    <label><input type="radio"
+                  [value]=false
+                  formControlName="bought"
+    >Не купленные</label>
+  </p>
+  <input type="text"
+         placeholder="Название игры"
+         name="filter-name"
+         formControlName="name"
+  >
+
+  <button (click)="createFilterForm()">Фильтровать</button>
+</form>

@@ -1,0 +1,19 @@
+.selected-board-game {
+  width: 250px;
+  height: 200px;
+  text-align: center;
+}
+.text {
+  text-align: center;
+}
+input{
+  width: 70%;
+}
+
+.rating-block {
+  height: 120px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}

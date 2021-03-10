@@ -1,0 +1,44 @@
+<form [formGroup]="addGameForm">
+  <div class="input-block"
+       [ngClass]="{invalid: name.invalid && (name.touched || name.dirty)}" >
+    <input type="text"
+           placeholder="Название игры"
+           name="name"
+           formControlName="name"
+    >
+      <span
+        *ngIf="name.invalid"
+      >Заполните название игры</span>
+    <span
+      *ngIf="name.valid"
+    >Поле заполнено</span>
+
+  </div>
+  <div class="input-block"
+       [ngClass]="{invalid: imageSrc.invalid && (imageSrc.touched || imageSrc.dirty)}" >
+    <input type="text"
+           placeholder="Ссылка на картинку"
+           name="imageSrc"
+           formControlName="imageSrc"
+    >
+    <span
+      *ngIf="imageSrc.invalid"
+    >Заполните поле</span>
+    <span
+      *ngIf="imageSrc.valid"
+    >Поле заполнено</span>
+
+  </div>
+  <div class="input-block">
+    <input type="text"
+           placeholder="Описание"
+           name="description"
+           formControlName="description"
+    >
+    <label><input type="checkbox"
+                  formControlName="bought"
+    >Игра куплена</label>
+  </div>
+
+  <button [disabled]="addGameForm.invalid" (click)="addGame()">Добавить</button>
+</form>

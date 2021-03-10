@@ -1,0 +1,5 @@
+[
+  {"id":1,"name":"game1","imageSrc":"https://imgholder.ru/200x150/8493a8/adb9ca&text=Game1","description":"about game1","bought":true,"rating":null},
+  {"id":2,"name":"game2","imageSrc":"https://imgholder.ru/200x150/8493a8/adb9ca&text=Game2","description":"about game2","bought":true,"rating":8},
+  {"id":3,"name":"game3","imageSrc":"https://imgholder.ru/200x150/8493a8/adb9ca&text=Game3","description":"about game3","bought":false,"rating":null}
+]

@@ -1,0 +1,23 @@
+<p class="text">Наши игры:</p>
+<div *ngIf="loading" id="floatingCirclesG">
+  <div class="f_circleG" id="frotateG_01"></div>
+  <div class="f_circleG" id="frotateG_02"></div>
+  <div class="f_circleG" id="frotateG_03"></div>
+  <div class="f_circleG" id="frotateG_04"></div>
+  <div class="f_circleG" id="frotateG_05"></div>
+  <div class="f_circleG" id="frotateG_06"></div>
+  <div class="f_circleG" id="frotateG_07"></div>
+  <div class="f_circleG" id="frotateG_08"></div>
+</div>
+<div class="board-game-item"
+     *ngFor="let item of boardGamesList"
+     (click)="selectItem(item)"
+     [ngClass]="{selected: selectedBoardGame !== null && selectedBoardGame.id === item.id}"
+>
+  <p>{{item.id}}: {{item.name}}
+    <span *ngIf="item.bought; else elseBlock">- Куплена</span>
+    <ng-template #elseBlock>- Не куплена</ng-template>
+  </p>
+  <img [src]="item.imageSrc"  alt="game image">
+  <button (click)="removeBoardGame(item.id)">Удалить</button>
+</div>

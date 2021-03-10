@@ -1,0 +1,28 @@
+<p class="text">Подробнее про игру:</p>
+<div
+  *ngIf="selectedBoardGame === null; else display"
+  class="selected-board-game"
+>
+  <p>Выберите игру</p>
+  <img src="https://imgholder.ru/200x150/8493a8/adb9ca&text=Ваша+игра" alt="" />
+  <p>Подробнее:</p>
+</div>
+<ng-template #display>
+  <div class="selected-board-game">
+    <p>{{ selectedBoardGame.name }}</p>
+    <img [src]="selectedBoardGame.imageSrc" alt="" />
+    <p>Подробнее: {{ selectedBoardGame.description }}</p>
+    <div
+      class="rating-block"
+      *ngIf="selectedBoardGame.bought"
+    >
+      <span *ngIf="selectedBoardGame.rating; else noRatingText">
+        Рейтинг: {{ selectedBoardGame.rating }}
+      </span>
+      <ng-template #noRatingText>Укажите рейтинг</ng-template>
+      <input [(ngModel)]="rating" type="range" min="0" max="10" step="1" />
+      <span>{{ rating }}</span>
+      <button (click)="updateRating()">Поставить оценку</button>
+    </div>
+  </div>
+</ng-template>
